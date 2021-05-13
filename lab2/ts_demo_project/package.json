@@ -1,0 +1,14 @@
+{
+  "name": "ts_demo_project",
+  "version": "1.0.0",
+  "description": "My first npm package",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run tsc -w"
+  },
+  "author": "Iva Popova",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}

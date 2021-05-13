@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 	template: `
 		<app-header>
 		<app-add-todo>
-		<app-todo-list></app-todo-list>
+		<app-todo-list>
 		<h2>HELLLOE</h2>
 
 	`,
