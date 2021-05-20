@@ -1,0 +1,12 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build -- -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
