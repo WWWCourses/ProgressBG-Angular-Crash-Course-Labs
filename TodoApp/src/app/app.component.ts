@@ -4,11 +4,9 @@ import { Component } from '@angular/core';
 	{
 	selector: `app-root`,
 	template: `
-		<app-header>
-		<app-add-todo>
-		<app-todo-list>
-		<h2>HELLLOE</h2>
-
+		<app-header></app-header>
+		<app-add-todo></app-add-todo>
+		<app-todo-list></app-todo-list>
 	`,
 	styles: []
 }
