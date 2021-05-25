@@ -1,0 +1,34 @@
+<h1>Directives demo</h1>
+<h2>ngIF</h2>
+<p>User age is {{userAge}}</p>
+<p *ngIf="isAdult()">Welcome {{userName}}</p>
+<hr>
+<div *ngIf="isAdult();then alabala else elseBlockName"></div>
+<ng-template #alabala>
+	<div>Welcome {{userName}}!</div>
+</ng-template>
+<ng-template #elseBlockName>
+	<div>You can not use this site!</div>
+</ng-template>
+<hr>
+
+<h2>ngSwitch</h2>
+<div class="container" [ngSwitch]="myVar">
+	<div *ngSwitchCase="'A'">Var is A</div>
+	<div *ngSwitchCase="'B'">Var is B</div>
+	<div *ngSwitchDefault>Var is something else</div>
+</div>
+<hr>
+
+<h2>ngFor</h2>
+<ul>
+	<li *ngFor="let color of colors">{{color}}</li>
+</ul>
+<hr>
+
+<h2>NgClass</h2>
+<p [ngClass]="styles">This text is styled according to user age</p>
+
+
+<h2>Custom Directive</h2>
+<div highlight>this is highlighted text</div>
