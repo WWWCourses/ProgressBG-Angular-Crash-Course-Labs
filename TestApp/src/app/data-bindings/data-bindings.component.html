@@ -1,0 +1,16 @@
+<!-- <p>data-bindings works!</p>
+<div style="background-color:red">test</div>
+
+<div [style.background-color]="bgColor" [style.fontSize]="'2em'" id="test">test</div>
+<div [attr.style]="bgStyle" id="test">test</div>
+<hr> -->
+
+
+<label>user name: <input type="text" id="userName" #userNameInput></label>
+<button (click)="logUser(userNameInput.value)">Get User Name</button>
+<div>{{userNameInput.style.backgroundColor}}</div>
+<hr>
+<label>user age: <input type="number" (keypress)="keypressHandler($event)" ></label>
+
+
+

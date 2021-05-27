@@ -7,6 +7,7 @@ import { CComponent } from './b-component/c/c.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { HighlightDirective } from './custom-directives/highlight.directive';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { DataBindingsComponent } from './data-bindings/data-bindings.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
     DirectivesDemoComponent,
     HighlightDirective,
     PipesDemoComponent,
+    DataBindingsComponent,
   ],
   imports: [
     BrowserModule
