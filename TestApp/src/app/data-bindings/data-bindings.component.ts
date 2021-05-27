@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { dir } from 'console';
+// import { dir } from 'console';
 
 @Component({
   selector: 'app-data-bindings',
@@ -27,7 +27,7 @@ export class DataBindingsComponent implements OnInit {
 
   // TODO: why error?
   keypressHandler(e:Event){
-    console.log(e)
+    console.dir(e)
   }
 
 }
