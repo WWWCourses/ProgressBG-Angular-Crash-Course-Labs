@@ -11,6 +11,14 @@
 <div>{{userNameInput.style.backgroundColor}}</div>
 <hr>
 <label>user age: <input type="number" (keypress)="keypressHandler($event)" ></label>
+<hr>
+<label>userName1: <input [(ngModel)]="userName"></label>
+<hr>
 
+<!-- TODO: why value is not updated -->
+<input #userNameInput [value]="userName">
+<button (click)="onInput(userNameInput.value)">On Click</button>
+
+<div class="output">You've entered: {{userName}}</div>
 
 

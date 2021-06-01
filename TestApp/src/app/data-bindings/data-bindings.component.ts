@@ -25,9 +25,19 @@ export class DataBindingsComponent implements OnInit {
     console.log(`user name: ${userName}`);
   }
 
-  // TODO: why error?
   keypressHandler(e:Event){
     console.dir(e)
   }
 
+
+  // onInput(el:HTMLInputElement){
+  //   console.log(`value: ${el.value}`)
+
+  // }
+
+  // TODO: why value is not updated
+  onInput(txt:string){
+    console.log(txt);
+
+  }
 }
