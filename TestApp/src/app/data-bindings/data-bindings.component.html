@@ -15,9 +15,8 @@
 <label>userName1: <input [(ngModel)]="userName"></label>
 <hr>
 
-<!-- TODO: why value is not updated -->
-<input #userNameInput [value]="userName">
-<button (click)="onInput(userNameInput.value)">On Click</button>
+<input [value]="userName" (input)="onInput($event)">
+<div class="output">You've entered: {{userName}}</div>
 
 <div class="output">You've entered: {{userName}}</div>
 

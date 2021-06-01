@@ -16,6 +16,8 @@ export class DataBindingsComponent implements OnInit {
 
   userName: string = ""
 
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -27,17 +29,14 @@ export class DataBindingsComponent implements OnInit {
 
   keypressHandler(e:Event){
     console.dir(e)
+
+  }
+
+
+  onInput(el:any){
+    console.log(`value: ${el.value}`)
+
   }
 
 
-  // onInput(el:HTMLInputElement){
-  //   console.log(`value: ${el.value}`)
-
-  // }
-
-  // TODO: why value is not updated
-  onInput(txt:string){
-    console.log(txt);
-
-  }
 }
