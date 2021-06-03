@@ -5,19 +5,18 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>This is Parent!</p>
     <app-child
-      [x]="'x in parent'"
-      [todoTitleProp]="todoTitle"
-      ></app-child>
-
+      [x]="'X in parent'"
+    ></app-child>
     <!-- <input type="text" [value]="'test'"> -->
   `,
   styles: [
   ]
 })
 export class ParentComponent implements OnInit {
-  todoTitle = "jdsfkdjkfdTodo1"
+  todoTitle = "Todo1"
 
   constructor() {
+    console.log(`ParentComponent Constructor`);
 
   }
 
