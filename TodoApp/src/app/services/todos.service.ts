@@ -28,13 +28,9 @@ export class TodosService {
 
   //TASK: define next methods:
 
-  // addTodo:
-    // param: todoTitle
-    // add new todo object at hte end of todos
-
-  //
-
-
+  // addTodo():
+    // param: todoTitle:string
+    // add new todo object at the end of todos
 }
 
 
