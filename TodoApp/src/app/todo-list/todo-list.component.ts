@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ITodo } from "../interfaces/todo";
+import { TodosService } from "../services/todos.service";
 
 
 @Component({
   selector: 'app-todo-list',
   template: `
     <p>todo-list works!</p>
-    <ul *ngFor="let todo of todos">
-      <app-todo-item [todo]="todo"></app-todo-item>
+    <ul>
+      <!-- <app-todo-item></app-todo-item> -->
+      <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
+
     </ul>
   `,
   styles: [
@@ -16,21 +19,9 @@ import { ITodo } from "../interfaces/todo";
 export class TodoListComponent implements OnInit {
   todos:ITodo[]
 
-  constructor() { }
+  constructor( private todoServiceObject:TodosService) { }
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        id: 1,
-        title: "Todo1",
-        completed: false
-      },
-      {
-        id: 2,
-        title: "Todo2",
-        completed: true
-      }
-    ]
+    this.todos = this.todoServiceObject.getTodos();
   }
-
 }

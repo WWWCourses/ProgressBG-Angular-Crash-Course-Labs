@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-add-todo',
   template: `
-    <p>
-      ADD-TODO WORKS!
-    </p>
+    <div>
+      <input type="text" name="" id="" placeholder="todo title">
+      <button>Add</button>
+    </div>
   `,
   styles: [
   ]
