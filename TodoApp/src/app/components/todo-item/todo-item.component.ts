@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ITodo } from "../interfaces/todo";
-import { TodosService } from "../services/todos.service";
+import { ITodo } from "../../shared/todo";
+import { TodosService } from "../../shared/todos.service";
 
 @Component({
   selector: 'app-todo-item',
@@ -8,12 +8,11 @@ import { TodosService } from "../services/todos.service";
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-  @Input() todo:ITodo
+  @Input() todo!:ITodo
 
   constructor( private _TodosService:TodosService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   removeHandler(id:number){
     this._TodosService.removeTodo(id)
@@ -23,4 +22,6 @@ export class TodoItemComponent implements OnInit {
     this._TodosService.completeTodo(id)
   }
 }
+
+
 

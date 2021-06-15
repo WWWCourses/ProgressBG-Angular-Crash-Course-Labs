@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { TodoEditComponent } from "./todo-edit/todo-edit.component";
-import { AppComponent } from "./app.component";
+import { RouterModule, Routes } from '@angular/router';
+
+import { TodoListComponent } from "./components/todo-list/todo-list.component";
+import { TodoEditComponent } from "./components/todo-edit/todo-edit.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component:AppComponent
+    'path': '',
+    'redirectTo': 'todos',
+    'pathMatch': 'full'
   },
   {
-    path: 'todo-edit/:id',
-    component: TodoEditComponent
+    'path':'todos',
+    'component':TodoListComponent
   },
   {
-    path: 'todo-edit',
-    component: TodoEditComponent
-  },
+    'path':'todos/edit/:id',
+    'component': TodoEditComponent
+  }
+
 ];
 
 @NgModule({

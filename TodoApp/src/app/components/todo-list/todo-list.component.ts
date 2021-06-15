@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { ITodo } from "../interfaces/todo";
-import { TodosService } from "../services/todos.service";
+import { ITodo } from "../../shared/todo";
+import { TodosService } from "../../shared/todos.service";
 
 
 @Component({
@@ -8,8 +8,8 @@ import { TodosService } from "../services/todos.service";
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent implements OnInit {
-  todos:ITodo[]
+export class TodoListComponent implements OnInit,AfterViewChecked {
+  todos!:ITodo[]
 
   constructor( private _TodosService:TodosService) { }
 
@@ -18,8 +18,8 @@ export class TodoListComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    console.log(`AfterViewChecked triggerd`);
+    // console.log(`AfterViewChecked triggerd`);
+    console.log('Current todos:');
     console.dir(this.todos)
-
   }
 }

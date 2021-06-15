@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ITodo } from "../interfaces/todo";
+import { ITodo } from "./todo";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,6 @@ export class TodosService {
   constructor() { }
 
   getTodos(){
-    console.dir(this.todos)
     return this.todos
   }
 
@@ -40,8 +39,6 @@ export class TodosService {
     // iep: not the differnce - if we did not change the state, Angular's change detection won't be triggered
     // this.todos = [...this.todos, newTodo]
     this.todos.push(newTodo)
-
-    console.dir(this.todos);
   }
 
   removeTodo(id:number){

@@ -57,3 +57,7 @@ a{
 .removeTodo:hover i::before, .editTodo:hover i::before, .completeTodo:hover i::before{
     opacity: 1;
 }
+
+.completed{
+    text-decoration: line-through #F99;
+}
