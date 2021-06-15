@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { AutofocusDirective } from './autofocus.directive';
 
 
 
@@ -18,7 +19,8 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
       HeaderComponent,
       AddTodoComponent,
       TodoListComponent,
-      TodoItemComponent
+      TodoItemComponent,
+      AutofocusDirective
     ],
     imports: [
       BrowserModule,

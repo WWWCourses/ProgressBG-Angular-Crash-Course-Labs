@@ -40,6 +40,8 @@ export class TodosService {
     // iep: not the differnce - if we did not change the state, Angular's change detection won't be triggered
     // this.todos = [...this.todos, newTodo]
     this.todos.push(newTodo)
+
+    console.dir(this.todos);
   }
 
   removeTodo(id:number){

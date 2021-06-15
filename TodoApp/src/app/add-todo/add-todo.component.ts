@@ -5,7 +5,7 @@ import { TodosService } from "../services/todos.service";
   selector: 'app-add-todo',
   template: `
     <div class="todo-add">
-      <input type="text" autofocus placeholder="add new todo ..." #todoInput>
+      <input type="text" AppAutofocus placeholder="add new todo ..." #todoInput>
       <button class="todo-add-btn" (click)="clickHandler(todoInput)">Add</button>
     </div>
   `,
@@ -19,6 +19,7 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // TODO: Add example of passing event to the parent, without using service
   clickHandler(todoInput:HTMLInputElement){
     this._TodosService.addTodo(todoInput.value)
     todoInput.value = ""
