@@ -8,11 +8,21 @@ import { Component } from '@angular/core';
 		<app-add-todo></app-add-todo>
 		<app-todo-list></app-todo-list>
 	`,
-	styles: []
+	styles: [
+		`
+			:host{
+				display:block;
+				width:100%;
+				height:100vh;
+				background: #333;
+				padding:2em;
+				box-sizing:border-box;
+				/* border: 5px solid red; */
+			}
+		`
+	]
 }
 )
-export class AppComponent {
-	title = 'IVA';
-}
+export class AppComponent {}
 
 

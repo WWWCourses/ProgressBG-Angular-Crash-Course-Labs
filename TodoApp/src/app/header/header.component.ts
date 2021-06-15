@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
     <header><h1>Simple Todo App</h1></header>
   `,
   styles: [
+    `
+      header{
+        font-size: 2em;
+        color: aquamarine;
+        text-align: center;
+        margin-bottom:1em;
+      }
+    `
   ]
 })
 export class HeaderComponent implements OnInit {

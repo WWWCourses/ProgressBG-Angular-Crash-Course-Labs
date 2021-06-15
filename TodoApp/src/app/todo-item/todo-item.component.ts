@@ -4,20 +4,8 @@ import { TodosService } from "../services/todos.service";
 
 @Component({
   selector: 'app-todo-item',
-  template: `
-    <li [attr.data-id]="todo.id">
-      <span class="todoID">{{todo.id}}.</span>
-			<span>{{todo.title}}</span>
-      <div class="completeTodo">
-        <i class="fas fa-check" (click)=completeHandler(todo.id)></i>
-      </div>
-			<div class="removeTodo">
-        <i class="far fa-trash-alt" (click)=removeHandler(todo.id)></i>
-      </div>
-		</li>
-  `,
-  styles: [
-  ]
+  templateUrl: './todo-item.component.html',
+  styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo:ITodo

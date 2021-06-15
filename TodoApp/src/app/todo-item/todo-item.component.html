@@ -1,0 +1,13 @@
+<li [attr.data-id]="todo.id">
+	<span class="todoID">{{todo.id}}.</span>
+	<span>{{todo.title}}</span>
+	<div class="completeTodo">
+		<i class="fas fa-check" (click)=completeHandler(todo.id)></i>
+	</div>
+	<div class="editTodo">
+		<a href=""><i class="fas fa-edit"></i></a>
+	</div>
+	<div class="removeTodo">
+		<i class="far fa-trash-alt" (click)=removeHandler(todo.id)></i>
+	</div>
+</li>

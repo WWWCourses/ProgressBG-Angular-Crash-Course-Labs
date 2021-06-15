@@ -5,15 +5,8 @@ import { TodosService } from "../services/todos.service";
 
 @Component({
   selector: 'app-todo-list',
-  template: `
-    <ul class="todo-items">
-      <app-todo-item *ngFor="let todo of todos" [todo]="todo"
-      [ngClass]="{'completed' : todo.completed}"
-      ></app-todo-item>
-    </ul>
-  `,
-  styles: [
-  ]
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
   todos:ITodo[]
