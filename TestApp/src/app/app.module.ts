@@ -11,6 +11,8 @@ import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { DataBindingsComponent } from './data-bindings/data-bindings.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ModuleAModule } from '../modules/module-a/module-a.module';
+import { ModuleBModule } from '../modules/module-b/module-b.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ChildComponent } from './child/child.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ModuleAModule,
+    ModuleBModule
   ],
   providers: [],
   bootstrap: [AppComponent]
