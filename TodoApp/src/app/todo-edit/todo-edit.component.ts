@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo-edit',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-edit.component.css']
 })
 export class TodoEditComponent implements OnInit {
+  todoId:number
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.todoId = parseInt(this.route.snapshot.paramMap.get('id'));
   }
+
+
 
 }

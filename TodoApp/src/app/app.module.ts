@@ -8,6 +8,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AutofocusDirective } from './autofocus.directive';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule(
 
@@ -24,6 +25,7 @@ import { TodoEditComponent } from './todo-edit/todo-edit.component';
     ],
     imports: [
       BrowserModule,
+      AppRoutingModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

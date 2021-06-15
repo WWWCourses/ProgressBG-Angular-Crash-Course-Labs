@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 		<app-header></app-header>
 		<app-add-todo></app-add-todo>
 		<app-todo-list></app-todo-list>
+		<router-outlet></router-outlet>
 	`,
 	styles: [
 		`
