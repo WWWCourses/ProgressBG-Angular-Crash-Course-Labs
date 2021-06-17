@@ -9,12 +9,12 @@ import { TodosService } from "../../shared/todos.service";
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit,AfterViewChecked {
-  todos!:ITodo[]
+  todos:ITodo[]=[]
 
-  constructor( private _TodosService:TodosService) { }
+  constructor( private _todosService:TodosService) { }
 
   ngOnInit(): void {
-    this.todos = this._TodosService.getTodos();
+    this.todos = this._todosService.getTodos();
   }
 
   ngAfterViewChecked(){

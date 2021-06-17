@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import { ITodo } from "./todo";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
-  todos:ITodo[] = [
-    {
-      id: 1,
-      title: "Todo1",
-      completed: false
-    },
-    {
-      id: 2,
-      title: "Todo2",
-      completed: true
-    },
-  ]
+  todos!:ITodo[]
+  todosURL = 'assets/data/todos.json';
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  fetchTodos() {
+    return this.http.get(this.todosURL)
+  }
+
 
   getTodos(){
     return this.todos
