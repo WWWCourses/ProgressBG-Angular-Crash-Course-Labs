@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
+import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { BComponentComponent } from './b-component/b-component.component';
@@ -27,7 +28,8 @@ import { ModuleBModule } from '../modules/module-b/module-b.module';
     BrowserModule,
     FormsModule,
     ModuleAModule,
-    ModuleBModule
+    ModuleBModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
