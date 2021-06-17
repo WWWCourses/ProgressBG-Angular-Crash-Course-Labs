@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { ITodo } from "./todo";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { Observable,throwError } from "rxjs";
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,29 @@ export class TodosService {
 
   constructor(private http:HttpClient) { }
 
-  fetchTodos() {
-    return this.http.get(this.todosURL)
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      errorMessage = `Client-side error: ${error.error.message}`;
+    } else {
+      // server-side error
+      errorMessage = `Server-side error: ${error.status}\nMessage: ${error.message}`;
+    }
+    // window.alert(errorMessage);
+    console.log(`errorMessage: ${errorMessage}`);
+
+    return throwError(errorMessage);
+  }
+
+
+  fetchTodos():Observable<ITodo[]> {
+    let resp = this.http.get<ITodo[]>(this.todosURL)
+    // let resp2 = this.http.get<ITodo[]>(this.todosURL,{ observe: 'response' })
+    // console.dir(resp2)
+    return resp.pipe(
+      catchError(this.handleError)
+    )
   }
 
 

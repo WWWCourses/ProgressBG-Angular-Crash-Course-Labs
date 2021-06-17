@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { ITodo } from "../../shared/todo";
+import { ITodo } from '../../shared/todo';
 import { TodosService } from "../../shared/todos.service";
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -13,9 +14,22 @@ export class TodoListComponent implements OnInit,AfterViewChecked {
 
   constructor( private _todosService:TodosService) { }
 
-  ngOnInit(): void {
-    this.todos = this._todosService.getTodos();
+  compareByTitle(a:ITodo,b:ITodo) {
+    if (a.title < b.title)
+      return -1;
+    if (a.title > b.title)
+      return 1;
+    return 0;
   }
+
+  ngOnInit() {
+    this._todosService
+      .fetchTodos()
+      .pipe(map(todos => todos.sort(this.compareByTitle)))
+      .subscribe( data=> this.todos = data)
+  }
+
+
 
   ngAfterViewChecked(){
     // console.log(`AfterViewChecked triggerd`);
