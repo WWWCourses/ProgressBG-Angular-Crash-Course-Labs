@@ -26,6 +26,8 @@ node_modules/
 **/node_modules/
 .sass-cache
 
+package-lock.json
+
 *.sublime-workspace
 *.sublime-project
 

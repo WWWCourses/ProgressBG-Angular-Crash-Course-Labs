@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class TodosService {
   todos!:ITodo[]
-  todosURL = 'assets/data/todos.json';
+  todosURL = 'http://localhost:3000/todos';
 
   constructor(private http:HttpClient) { }
 
@@ -28,36 +28,18 @@ export class TodosService {
     return throwError(errorMessage);
   }
 
-
   fetchTodos():Observable<ITodo[]> {
-    let resp = this.http.get<ITodo[]>(this.todosURL)
-    // let resp2 = this.http.get<ITodo[]>(this.todosURL,{ observe: 'response' })
-    // console.dir(resp2)
-    return resp.pipe(
-      catchError(this.handleError)
-    )
-  }
-
-
-  getTodos(){
-    return this.todos
-  }
-
-  getLastId(){
-    return this.todos[this.todos.length-1].id
+    return this.http.get<ITodo[]>(this.todosURL)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
   // add new todo object at the end of todos
-  addTodo(todoTitle:string){
-    const newTodo:ITodo = {
-      id:this.getLastId()+1,
-      title:todoTitle,
-      completed:false
-    }
-
-    // iep: not the differnce - if we did not change the state, Angular's change detection won't be triggered
-    // this.todos = [...this.todos, newTodo]
-    this.todos.push(newTodo)
+  addTodo(todo:ITodo):Observable<ITodo>{
+    return this.http.post<ITodo>(this.todosURL, todo, { headers: {
+      "content-type": "application/json" }
+    });
   }
 
   removeTodo(id:number){

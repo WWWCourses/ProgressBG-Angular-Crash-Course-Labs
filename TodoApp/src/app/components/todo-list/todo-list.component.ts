@@ -16,24 +16,33 @@ export class TodoListComponent implements OnInit,AfterViewChecked {
 
   compareByTitle(a:ITodo,b:ITodo) {
     if (a.title < b.title)
-      return -1;
-    if (a.title > b.title)
       return 1;
+    if (a.title > b.title)
+      return -1;
     return 0;
   }
 
   ngOnInit() {
     this._todosService
       .fetchTodos()
-      .pipe(map(todos => todos.sort(this.compareByTitle)))
-      .subscribe( data=> this.todos = data)
+      .pipe( map(todos => todos.sort(this.compareByTitle)) )
+      .subscribe( data => this.todos = data)
   }
 
 
-
   ngAfterViewChecked(){
-    // console.log(`AfterViewChecked triggerd`);
     console.log('Current todos:');
     console.dir(this.todos)
+  }
+
+  addTodo(todoTitle:string){
+    console.log(`addTodo emited: ${todoTitle}`);
+
+    // reffer: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+    const newTodo = <ITodo>{
+      'title':todoTitle,
+      'completed': false
+    }
+    this._todosService.addTodo(newTodo).subscribe(todo => (this.todos.push(todo)));
   }
 }
