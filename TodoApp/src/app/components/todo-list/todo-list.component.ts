@@ -14,10 +14,13 @@ export class TodoListComponent implements OnInit,AfterViewChecked {
 
   constructor( private _todosService:TodosService) { }
 
+  // DONE: sort by 2 criterion (descending):
+  // 1. By title
+  // 2. By ID
   compareByTitle(a:ITodo,b:ITodo) {
-    if (a.title < b.title)
+    if (a.title > b.title || a.id > b.id)
       return 1;
-    if (a.title > b.title)
+    if (a.title < b.title || a.id < b.id)
       return -1;
     return 0;
   }

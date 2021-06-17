@@ -1,44 +1,24 @@
 {
   "todos": [
     {
+      "id": 4,
+      "title": "Todo2",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Todo1",
+      "completed": true
+    },
+    {
       "id": 1,
       "title": "Todo1",
       "completed": false
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Todo2",
       "completed": true
-    },
-    {
-      "title": "dsdsds",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "title": "sdsjdhsj",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "title": "dsdsd",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "title": "dsdsdks",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "title": "jdsdks",
-      "completed": false,
-      "id": 8
     }
   ]
 }
