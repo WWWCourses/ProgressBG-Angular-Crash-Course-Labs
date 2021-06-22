@@ -3,7 +3,7 @@ li{
     line-height: 3em;
     padding-left: 1em;
     box-sizing: border-box;
-    background: #666;
+    /* background: #666; */
     color: #DDD;
 }
 li:hover{

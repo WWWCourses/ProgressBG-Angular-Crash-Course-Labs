@@ -1,3 +1,7 @@
+/* app-todo-item:nth-child(2n){
+    display: block;
+    background-color: aqua;
+} */
 div{
     width: 60%;
     margin: 0 auto;
@@ -8,3 +12,6 @@ ul{
     width: 98%;
 }
 
+li{
+    border: 1px solid red;
+}
