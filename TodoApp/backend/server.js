@@ -5,17 +5,18 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
-// const allowedOrigins = ['http://localhost:8080', 'http://localhost:4200']
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (allowedOrigins.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error(`ORIGIN: ${origin} Not allowed by CORS`))
-//     }
-//   }
-// }
-// app.use(cors(corsOptions));
+const allowedOrigins = ['http://localhost:8080', 'http://localhost:4200']
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error(`ORIGIN: ${origin} Not allowed by CORS`))
+    }
+  }
+}
+app.use(cors(corsOptions));
 
 
 // parse requests of content-type - application/json
@@ -40,7 +41,7 @@ app.get("/", (req, res) => {
 	res.json({ message: "todo app nodejs server is up!" });
 });
 
-
+// create session JWT token
 app.post("/api/login", (req, res) => {
 	const user = {
 		id: 1,
@@ -54,7 +55,8 @@ app.post("/api/login", (req, res) => {
 	});
 });
 
-app.post("/api/todos", verifyToken, (req, res) => {
+//
+app.post("/api/login", verifyToken, (req, res) => {
 	jwt.verify(req.token, "secretkey", (err, authData) => {
 		if (err) {
 			res.json({
@@ -73,7 +75,7 @@ app.post("/api/todos", verifyToken, (req, res) => {
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}.`);
 });
