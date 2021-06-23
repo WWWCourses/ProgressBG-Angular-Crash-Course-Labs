@@ -13,13 +13,13 @@ export class LoginComponent implements OnInit {
 	form:FormGroup;
 
 	constructor(private fb:FormBuilder,
-							 private authService: AuthService,
-							 private router: Router
+				private authService: AuthService,
+				private router: Router
 	){
-			this.form = this.fb.group({
-				email: ['',Validators.required],
-				password: ['',Validators.required]
-			});
+		this.form = this.fb.group({
+			email: ['',Validators.required],
+			password: ['',Validators.required]
+		});
 	}
 
 	ngOnInit(): void {
@@ -30,12 +30,12 @@ export class LoginComponent implements OnInit {
 
 			if (val.email && val.password) {
 				this.authService.loginUser(val.email, val.password)
-						.subscribe(
-								() => {
-										console.log("User is logged in");
-										this.router.navigateByUrl('/');
-								}
-						);
+					.subscribe(
+						() => {
+							console.log("User is logged in");
+							this.router.navigateByUrl('/');
+						}
+					);
 			}
 	}
 

@@ -19,7 +19,7 @@ export class AuthService {
     }
 
     loginUser(emailAddress: string, password: string) {
-        return this.http.post<any>(`${this.baseUrl}/`, { emailAddress, password })
+        return this.http.post<any>(`${this.baseUrl}/api/login`, { emailAddress, password })
             .pipe(map(response=> {
                 localStorage.setItem('loggedInUser', JSON.stringify(response));
                 this.loggedUserSubject.next(response);
